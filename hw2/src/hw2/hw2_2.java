@@ -17,7 +17,6 @@ public class hw2_2 {
 			guess=sc.nextInt();
 			if(guess>ans) {
 				max=guess;
-				
 			}else if(guess<ans) {
 				min=guess;
 			}else{
