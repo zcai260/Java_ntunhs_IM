@@ -3,7 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-public class Main
+public class hw4_2
 {
 	public static void main(String[] args) {
 		Path filePath = Path.of("demo.txt");
