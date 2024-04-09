@@ -8,19 +8,29 @@ public class hw6 {
 		Scanner scanner = new Scanner(System.in);
 		char currentPlayer = 'X';
 		boolean gameEnded=false;
+		int row2;
+		int col2;
 		while(!gameEnded) {
 			tictactoe.drowBoard(board);
 			boolean validInput=false;
 			while(!validInput) {
 				System.out.println("Player " + currentPlayer + ", enter your move (row and column): ");				
-				int row = scanner.nextInt();
-				int col = scanner.nextInt();
-				if (row >= 0 && row < 3 && col >= 0 && col < 3 && board [row] [col] == ' ') {
-					board [row][col] = currentPlayer;
-					validInput=true;
-				} else { 
-						System.out.println("This move at (" + row + "," + col + ") is not valid. Try again.");
-				}
+				String row = scanner.next();
+				String col = scanner.next();
+				boolean check=tictactoe.check(row, col);
+				if(check) {
+					row2=intValue(row);
+					col2=intValue(col);
+					}else {
+						System.out.println("輸入錯誤");
+						continue;
+					}
+					if (row2 >= 0 && row2 < 3 && col2 >= 0 && col2 < 3 && board [row2] [col2] == ' ') {
+						board [row2][col2] = currentPlayer;
+						validInput=true;
+						} else { 
+							System.out.println("This move at (" + row + "," + col + ") is not valid. Try again.");
+						}
 			}
 			gameEnded = tictactoe.checkWinner(board,currentPlayer);
 			if (!gameEnded) {
@@ -29,6 +39,11 @@ public class hw6 {
 		}
 		tictactoe.drowBoard(board);
 		System.out.println("Player " + currentPlayer + " wins!");
+	}
+
+	private static int intValue(String row) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	
