@@ -27,7 +27,7 @@ public class Ball extends JPanel
     {
     	if (collision())
     	{
-	    	incy = -1; //改變y軸的移動方向 
+	    	incy = -16; //改變y軸的移動方向 
 	    	y = window.racquet.getTopY() - ballsize; // 正球的位置,為了防止級導致的舊球和小球,,計分會增加! 
 	    	window.score++;
     	}
@@ -56,7 +56,7 @@ public class Ball extends JPanel
     
     private boolean collision()
     {
-    	return window.racquet.getBounds().intersects(getBounds()); // 用intersects方法判斷小球是否和球拍相交 
+    	return window.racquet.getBounds().intersects(getbounds()); // 用intersects方法判斷小球是否和球拍相交 
     }
 }
 
